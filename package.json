@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "node specRunner.js"
+    "test": "node spec/specRunner.js"
   },
-  "author": "",
+  "author": "Afrodyta",
   "license": "ISC"
 }
