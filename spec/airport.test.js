@@ -1,6 +1,7 @@
 //Imports the assertEquals function from test-framework/test-framework.js file
 import { assertEquals } from "./test-framework/test-framework.js";
 import airport from "../src/airport.js"; //Imports the airport module from src/airport.js file
+import { plane1, plane2 } from "../src/plane.js";
 
 //is called after each function to reset the values
 const afterEach = () => {
@@ -88,7 +89,7 @@ expected = airport.airportPlanes.length - 1;
 actual, result;
 
 // Act
-airport.takeOff(plane); //Remove plane from the airport (from airportPlanes array)
+airport.takeOff(); //Remove plane from the airport (from airportPlanes array)
 actual = airport.airportPlanes.length;
 // Assert
 result = assertEquals(actual, expected);
@@ -104,3 +105,31 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 3
+
+// TEST 4
+//* Test that plane passed to takeOff() is the actual plane removed from the airport.
+console.log(`Test 4`);
+console.log(`==================`);
+console.log(
+  `Test that plane passed to takeOff() is the actual plane removed from the airport expect array (airportPlanes) .`
+);
+// Arrange
+airport.land(plane1).land(plane2); //Add plane to the airport (into airportPlanes array) of id 1 and then again of id 2
+expected = false;
+actual, result;
+// Act
+airport.takeOff(plane1.id); //Remove plane from the airport (from airportPlanes array) with id of 1
+actual = airport.airportPlanes.some(({ id }) => id === plane1.id); // Checks if plane with id of 1 is preset in airportPlanes array
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 4

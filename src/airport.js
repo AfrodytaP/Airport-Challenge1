@@ -1,10 +1,14 @@
 const airport = {
   land: function (plane) {
+    //Add plane to the airportPlanes array
     this.airportPlanes.push(plane);
   },
 
-  takeOff: function () {
-    this.airportPlanes.pop();
+  takeOff: function (plane) {
+    //Find the index of the plane by ID
+    let index = this.airportPlanes.findIndex((p) => p.id === plane);
+    //If the plane is in array remove it from airportPlanes array
+    index !== -1 ? this.airportPlanes.splice(index, 1) : null;
   },
 
   airportPlanes: [],
