@@ -12,12 +12,12 @@ const afterEach = () => {
 };
 
 // Test 1
-//* Add plane to the airport using land and expect array (airportPlanes) to have increased in length by 1
+//* Add plane to the airport using land() and expect array (airportPlanes) to have increased in length by 1
 
 console.log(`Test 1`);
 console.log(`==================`);
 console.log(
-  `Add plane to basket using land and expect array (airportPlanes) to have increased in length by 1`
+  `Add plane to airport using land() and expect array (airportPlanes) to have increased in length by 1`
 );
 
 // Arrange
@@ -35,9 +35,40 @@ result = assertEquals(actual, expected);
 // Report
 console.log(result ? `Pass` : `Fail`);
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
-console.log(`==================`);
+console.log(`==================
+
+`);
 
 //Clean Up
 afterEach();
 
 //! END OF TEST 1
+
+// TEST 2
+//* Test that plane passed to land() is actually plane added to the airport.
+
+console.log(`Test 2`);
+console.log(`==================`);
+console.log(
+  `Test that plane passed to land() is actually added to the airport`
+);
+// Arrange
+expected = true;
+plane = { id: 1 }; //assigned id of 1 to plane
+// Act
+airport.land(plane); //Added plane with id of 1 into airportPlanes Array
+actual = airport.airportPlanes.includes(plane);
+// Assert
+result = assertEquals(actual, expected);
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 2
