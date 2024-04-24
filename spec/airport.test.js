@@ -288,3 +288,28 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 10
+
+//* Test that only planes that are present can be removed with planeExistsInAirport().
+console.log(`Test 11`);
+console.log(`==================`);
+console.log(`Test that checks if a specific plane is in the airport.`);
+// Arrange
+expected = true;
+actual, result;
+// Act
+plane = { id: 1 };
+airport.land(plane);
+actual = airport.planeExistsInAirport(plane); // Checks if present in airportPlanes
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 11
