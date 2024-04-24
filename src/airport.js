@@ -2,6 +2,7 @@ const airport = {
   land: function (plane) {
     //Add plane to the airportPlanes array
     this.airportPlanes.push(plane);
+    return this;
   },
 
   takeOff: function (plane) {
