@@ -135,11 +135,11 @@ afterEach();
 //! END OF TEST 4
 
 // TEST 5
-//* Test that the airport is at maximum capacity of plane in airportPlanes array.
+//* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is empty.
 console.log(`Test 5`);
 console.log(`==================`);
 console.log(
-  `Test that the airport is at maximum capacity of plane in airportPlanes array.`
+  `Test that the airport is at maximum capacity of plane in airportPlanes array when airport is empty.`
 );
 // Arrange
 expected = false;
@@ -159,3 +159,31 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 5
+
+//* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is partially full.
+console.log(`Test 6`);
+console.log(`==================`);
+console.log(
+  `Test that the airport is at maximum capacity of plane in airportPlanes array airport is partially full.`
+);
+// Arrange
+expected = false;
+actual, result;
+// Act
+plane = { id: "1" };
+airport.land(plane);
+
+actual = airport.isAirportFull(); // Checks if airportPlane is at maximum capacity of 10
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 6

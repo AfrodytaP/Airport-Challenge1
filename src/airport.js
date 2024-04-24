@@ -14,7 +14,7 @@ const airport = {
 
   isAirportFull: function () {
     //Checks if the length of airportPlanes is grater than the capacity of airport
-    return this.airportPlanes.length > this.airportCapacity;
+    return this.airportPlanes.length >= this.airportCapacity;
   },
 
   airportPlanes: [],
