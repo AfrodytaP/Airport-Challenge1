@@ -18,13 +18,18 @@ const airport = {
   },
 
   populateBasket: function (numberOfPlanes) {
+    //For loop increase id by 1 and land() populates airportPlanes
     for (let i = 1; i <= numberOfPlanes; i++) {
       let plane = { id: "${i}" };
       airport.land(plane);
     }
   },
+  changeAirportCapacityTo: function (newAirportCapacity) {
+    //Checks if newAirportCapacity is not a negative number
+    return (this.airportCapacity = newAirportCapacity);
+  },
   airportPlanes: [],
-  airportCapacity: 10,
+  airportCapacity: 10, //Default capacity
 };
 
 export default airport;
