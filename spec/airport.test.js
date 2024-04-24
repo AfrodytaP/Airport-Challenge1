@@ -187,3 +187,29 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 6
+
+//* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is full.
+console.log(`Test 7`);
+console.log(`==================`);
+console.log(
+  `Test that the airport is at maximum capacity of plane in airportPlanes array when airport is full.`
+);
+// Arrange
+expected = true;
+actual, result;
+// Act
+airport.populateBasket(10); // Populates airportPlanes array with planes
+actual = airport.isAirportFull(); // Checks if airportPlane is at maximum capacity of 10
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 7

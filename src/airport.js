@@ -17,6 +17,12 @@ const airport = {
     return this.airportPlanes.length >= this.airportCapacity;
   },
 
+  populateBasket: function (numberOfPlanes) {
+    for (let i = 1; i <= numberOfPlanes; i++) {
+      let plane = { id: "${i}" };
+      airport.land(plane);
+    }
+  },
   airportPlanes: [],
   airportCapacity: 10,
 };
