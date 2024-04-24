@@ -25,7 +25,7 @@ const airport = {
     }
   },
   changeAirportCapacityTo: function (newAirportCapacity) {
-    //Checks if newAirportCapacity is not a negative number
+    //Overrides airportCapacity
     return (this.airportCapacity = newAirportCapacity);
   },
   airportPlanes: [],
