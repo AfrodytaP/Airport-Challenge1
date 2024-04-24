@@ -12,7 +12,14 @@ const airport = {
     index !== -1 ? this.airportPlanes.splice(index, 1) : null;
   },
 
+  isAirportFull: function () {
+    //Find the index of the plane by ID
+    this.airportCapacity;
+    return this.airportPlanes.length >= this.airportCapacity;
+  },
+
   airportPlanes: [],
+  airportCapacity: 10,
 };
 
 export default airport;

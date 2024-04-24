@@ -133,3 +133,29 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 4
+
+// TEST 5
+//* Test that the airport is at maximum capacity of plane in airportPlanes array.
+console.log(`Test 5`);
+console.log(`==================`);
+console.log(
+  `Test that the airport is at maximum capacity of plane in airportPlanes array.`
+);
+// Arrange
+expected = false;
+actual, result;
+// Act
+actual = airport.isAirportFull(); // Checks if airportPlane is at maximum capacity of 10
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 5
