@@ -213,3 +213,27 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 7
+
+//* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
+console.log(`Test 8`);
+console.log(`==================`);
+console.log(`Test that the maximum capacity of airport can be increased.`);
+// Arrange
+expected = 20;
+actual, result;
+// Act
+airport.changeAirportCapacityTo(20); // Changes airportCapacity
+actual = airport.airportCapacity; // Checks airportPlane maximum capacity
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 8
