@@ -29,6 +29,10 @@ const airport = {
     this.airportCapacity =
       newAirportCapacity >= 0 ? newAirportCapacity : this.airportCapacity;
   },
+  planeExistsInAirport: function (plane) {
+    //Checks with same() if plane is present by id
+    return airport.airportPlanes.some(({ id }) => id === plane.id);
+  },
   airportPlanes: [],
   airportCapacity: 10, //Default capacity
 };
