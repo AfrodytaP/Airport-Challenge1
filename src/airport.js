@@ -13,9 +13,8 @@ const airport = {
   },
 
   isAirportFull: function () {
-    //Find the index of the plane by ID
-    this.airportCapacity;
-    return this.airportPlanes.length >= this.airportCapacity;
+    //Checks if the length of airportPlanes is grater than the capacity of airport
+    return this.airportPlanes.length > this.airportCapacity;
   },
 
   airportPlanes: [],
