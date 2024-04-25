@@ -16,7 +16,7 @@ const afterEach = () => {
 // Test 1
 //* Add plane to the airport using land() and expect array (airportPlanes) to have increased in length by 1
 
-console.log(`Test 1`);
+console.log(`Requirement 1 - Test 1`);
 console.log(`==================`);
 console.log(
   `Add plane to airport using land() and expect array (airportPlanes) to have increased in length by 1`
@@ -49,7 +49,7 @@ afterEach();
 // TEST 2
 //* Test that plane passed to land() is actually plane added to the airport.
 
-console.log(`Test 2`);
+console.log(`Requirement1 - Test 2`);
 console.log(`==================`);
 console.log(
   `Test that plane passed to land() is actually added to the airport`
@@ -77,7 +77,7 @@ afterEach();
 
 // TEST 3
 //* Remove plane from the airport using takeOff() and expect array (airportPlanes) to have decreased in length by 1.
-console.log(`Test 3`);
+console.log(`Requirement 2 - Test 3`);
 console.log(`==================`);
 console.log(
   `Remove plane from airport using takeOff() and expect array (airportPlanes) to have decreased in length by 1`
@@ -110,7 +110,7 @@ afterEach();
 
 // TEST 4
 //* Test that plane passed to takeOff() is the actual plane removed from the airport.
-console.log(`Test 4`);
+console.log(`Requirement 2 - Test 4`);
 console.log(`==================`);
 console.log(
   `Test that plane passed to takeOff() is the actual plane removed from the airport expect array (airportPlanes) .`
@@ -141,7 +141,7 @@ afterEach();
 
 // TEST 5
 //* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is empty.
-console.log(`Test 5`);
+console.log(`Requirement 3 - Test 5`);
 console.log(`==================`);
 console.log(
   `Test that the airport is at maximum capacity of plane in airportPlanes array when airport is empty.`
@@ -165,8 +165,9 @@ afterEach();
 
 //! END OF TEST 5
 
+// TEST 6
 //* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is partially full.
-console.log(`Test 6`);
+console.log(`Requirement 3 - Test 6`);
 console.log(`==================`);
 console.log(
   `Test that the airport is at maximum capacity of plane in airportPlanes array airport is partially full.`
@@ -193,8 +194,9 @@ afterEach();
 
 //! END OF TEST 6
 
+// TEST 7
 //* Test that the airport is at maximum capacity of plane in airportPlanes array when airport is full.
-console.log(`Test 7`);
+console.log(`Requirement 3 - Test 7`);
 console.log(`==================`);
 console.log(
   `Test that the airport is at maximum capacity of plane in airportPlanes array when airport is full.`
@@ -219,8 +221,9 @@ afterEach();
 
 //! END OF TEST 7
 
+// TEST 8
 //* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
-console.log(`Test 8`);
+console.log(`Requirement 4 -Test 8`);
 console.log(`==================`);
 console.log(`Test that the maximum capacity of airport can be increased.`);
 // Arrange
@@ -243,8 +246,9 @@ afterEach();
 
 //! END OF TEST 8
 
+// TEST 9
 //* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
-console.log(`Test 9`);
+console.log(`Requirement 4 - Test 9`);
 console.log(`==================`);
 console.log(`Test that the maximum capacity of airport can be set to 0.`);
 // Arrange
@@ -267,8 +271,9 @@ afterEach();
 
 //! END OF TEST 9
 
+// TEST 10
 //* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
-console.log(`Test 10`);
+console.log(`Requirement 4 - Test 10`);
 console.log(`==================`);
 console.log(
   `Test that the maximum capacity of airport can't be set to negative integer.`
@@ -293,8 +298,9 @@ afterEach();
 
 //! END OF TEST 10
 
+// TEST 11
 //* Test that only planes that are present can be removed with planeExistsInAirport().
-console.log(`Test 11`);
+console.log(`Requirement 5 - Test 11`);
 console.log(`==================`);
 console.log(`Test that checks if a specific plane is in the airport.`);
 // Arrange
@@ -318,8 +324,9 @@ afterEach();
 
 //! END OF TEST 11
 
+// TEST 12
 //* Test that only planes that are present can be removed with planeExistsInAirport().
-console.log(`Test 12`);
+console.log(` Requirement 5 - Test 12`);
 console.log(`==================`);
 console.log(`Test that checks if a specific plane is not in the airport.`);
 // Arrange
@@ -344,8 +351,9 @@ afterEach();
 
 //! END OF TEST 12
 
+// TEST 13
 //* Test that only planes that are not present can be be added with land().
-console.log(`Test 13`);
+console.log(`Requirement 6 - Test 13`);
 console.log(`==================`);
 console.log(`Test that checks if a specific plane is in the airport.`);
 // Arrange
@@ -370,8 +378,9 @@ afterEach();
 
 //! END OF TEST 13
 
+// TEST 14
 //* Test that only planes that are not present and only if the airport is not full can a plane be added with land().
-console.log(`Test 14`);
+console.log(`Requirement 6 - Test 14`);
 console.log(`==================`);
 console.log(
   `Test that checks if a specific plane is in the airport and the airport is not full.`
@@ -398,8 +407,9 @@ afterEach();
 
 //! END OF TEST 14
 
+// TEST 15
 //* Test that checks that plain has an ID before it is added to the airportPlanes array.`
-console.log(`Test 15`);
+console.log(`Requirement 6 - Test 15`);
 console.log(`==================`);
 console.log(
   `Test that checks that plain has an ID before it is added to the airportPlanes array.`
