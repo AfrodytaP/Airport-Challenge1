@@ -1,15 +1,18 @@
 const airport = {
   land: function (plane) {
-    //uses planeExistsInAirport() to check if plane is not already present and airport is not full
-    if (!this.planeExistsInAirport(plane) && !this.isAirportFull()) {
-      this.airportPlanes.push(plane);
+    if (plane.id) {
+      //uses planeExistsInAirport() to check if plane is not already present and airport is not full
+      if (!this.planeExistsInAirport(plane) && !this.isAirportFull()) {
+        this.airportPlanes.push(plane);
+      }
     }
   },
 
   takeOff: function (plane) {
     //Find the index of the plane by ID
-    let index = this.airportPlanes.findIndex((p) => p.id === plane);
-    //If the plane is in array remove it from airportPlanes array
+    let id = plane.id;
+    let index = this.airportPlanes.findIndex((p) => p.id === id);
+    //If the plane  has an index in array remove plane from airportPlanes array at that index
     index !== -1 ? this.airportPlanes.splice(index, 1) : null;
   },
 

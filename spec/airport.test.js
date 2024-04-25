@@ -83,14 +83,15 @@ console.log(
   `Remove plane from airport using takeOff() and expect array (airportPlanes) to have decreased in length by 1`
 );
 // Arrange
-plane = {};
+plane = { id: 1 };
 airport.land(plane); //Add plane to the airport (into airportPlanes array)
+plane = { id: 2 };
 airport.land(plane); //Add plane to the airport (into airportPlanes array)
 expected = airport.airportPlanes.length - 1;
 actual, result;
 
 // Act
-airport.takeOff(); //Remove plane from the airport (from airportPlanes array)
+airport.takeOff(plane); //Remove plane from the airport (from airportPlanes array)
 actual = airport.airportPlanes.length;
 // Assert
 result = assertEquals(actual, expected);
@@ -115,13 +116,15 @@ console.log(
   `Test that plane passed to takeOff() is the actual plane removed from the airport expect array (airportPlanes) .`
 );
 // Arrange
-airport.land(plane1); //Add plane to the airport (into airportPlanes array) of id 1
-airport.land(plane2); //Add plane to the airport (into airportPlanes array) of id 2
+plane = { id: 1 };
+airport.land(plane); //Add plane to the airport (into airportPlanes array)
+plane = { id: 2 };
+airport.land(plane); //Add plane to the airport (into airportPlanes array)
 expected = false;
 actual, result;
 // Act
-airport.takeOff(plane1.id); //Remove plane from the airport (from airportPlanes array) with id of 1
-actual = airport.airportPlanes.some(({ id }) => id === plane1.id); // Checks if plane with id of 1 is preset in airportPlanes array
+airport.takeOff(plane); //Remove plane from the airport (from airportPlanes array) with id of 1
+actual = airport.airportPlanes.some(({ id }) => id === plane.id); // Checks if plane with id of 1 is preset in airportPlanes array
 // Assert
 result = assertEquals(actual, expected);
 // Report
@@ -394,3 +397,30 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 14
+
+//* Test that checks that plain has an ID before it is added to the airportPlanes array.`
+console.log(`Test 15`);
+console.log(`==================`);
+console.log(
+  `Test that checks that plain has an ID before it is added to the airportPlanes array.`
+);
+// Arrange
+expected = 0;
+actual, result;
+// Act
+plane = { name: 1 }; // Adding a plane with id 11
+airport.land(plane); //land() preforms checks and adds plane if checks pass
+actual = airport.airportPlanes.length; // Checks length in airportPlanes
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 15
