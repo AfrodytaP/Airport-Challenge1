@@ -115,7 +115,8 @@ console.log(
   `Test that plane passed to takeOff() is the actual plane removed from the airport expect array (airportPlanes) .`
 );
 // Arrange
-airport.land(plane1).land(plane2); //Add plane to the airport (into airportPlanes array) of id 1 and then again of id 2
+airport.land(plane1); //Add plane to the airport (into airportPlanes array) of id 1
+airport.land(plane2); //Add plane to the airport (into airportPlanes array) of id 2
 expected = false;
 actual, result;
 // Act
@@ -199,7 +200,7 @@ console.log(
 expected = true;
 actual, result;
 // Act
-airport.populateBasket(10); // Populates airportPlanes array with planes
+airport.populateAirport(10); // Populates airportPlanes array with planes
 actual = airport.isAirportFull(); // Checks if airportPlane is at maximum capacity of 10
 // Assert
 result = assertEquals(actual, expected);
@@ -339,3 +340,29 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 12
+
+//* Test that only planes that are not present can be be added with land().
+console.log(`Test 13`);
+console.log(`==================`);
+console.log(`Test that checks if a specific plane is in the airport.`);
+// Arrange
+expected = airport.airportPlanes.length + 1;
+actual, result;
+// Act
+plane = { id: 1 };
+airport.land(plane);
+airport.land(plane);
+actual = airport.airportPlanes.length; // Checks length in airportPlanes
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 13

@@ -1,8 +1,10 @@
 const airport = {
   land: function (plane) {
-    //Add plane to the airportPlanes array
-    this.airportPlanes.push(plane);
-    return this;
+    //uses planeExistsInAirport() to check if plane is not already present
+    if (this.planeExistsInAirport(plane) !== true) {
+      //Add plane to the airportPlanes array
+      this.airportPlanes.push(plane);
+    }
   },
 
   takeOff: function (plane) {
@@ -17,11 +19,11 @@ const airport = {
     return this.airportPlanes.length >= this.airportCapacity;
   },
 
-  populateBasket: function (numberOfPlanes) {
+  populateAirport: function (numberOfPlanes) {
     //For loop increase id by 1 and land() populates airportPlanes
     for (let i = 1; i <= numberOfPlanes; i++) {
       let plane = { id: "${i}" };
-      airport.land(plane);
+      airport.airportPlanes.push(plane);
     }
   },
   changeAirportCapacityTo: function (newAirportCapacity) {
