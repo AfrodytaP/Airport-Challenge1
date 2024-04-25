@@ -1,8 +1,7 @@
 const airport = {
   land: function (plane) {
-    //uses planeExistsInAirport() to check if plane is not already present
-    if (this.planeExistsInAirport(plane) !== true) {
-      //Add plane to the airportPlanes array
+    //uses planeExistsInAirport() to check if plane is not already present and airport is not full
+    if (!this.planeExistsInAirport(plane) && !this.isAirportFull()) {
       this.airportPlanes.push(plane);
     }
   },
@@ -22,7 +21,7 @@ const airport = {
   populateAirport: function (numberOfPlanes) {
     //For loop increase id by 1 and land() populates airportPlanes
     for (let i = 1; i <= numberOfPlanes; i++) {
-      let plane = { id: "${i}" };
+      let plane = { id: i };
       airport.airportPlanes.push(plane);
     }
   },

@@ -23,7 +23,7 @@ console.log(
 );
 
 // Arrange
-let plane = {};
+let plane = { id: 1 };
 let expected = airport.airportPlanes.length + 1;
 let actual, result;
 
@@ -366,3 +366,31 @@ console.log(`==================
 afterEach();
 
 //! END OF TEST 13
+
+//* Test that only planes that are not present and only if the airport is not full can a plane be added with land().
+console.log(`Test 14`);
+console.log(`==================`);
+console.log(
+  `Test that checks if a specific plane is in the airport and the airport is not full.`
+);
+// Arrange
+expected = 10;
+actual, result;
+// Act
+airport.populateAirport(10); // Add 10 planes to airportPlanes
+plane = { id: 11 }; // Adding a plane with id 11
+airport.land(plane); //land() preforms checks and adds plane if checks pass
+actual = airport.airportPlanes.length; // Checks length in airportPlanes
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+// Clean Up
+afterEach();
+
+//! END OF TEST 14
