@@ -6,6 +6,7 @@ const afterEach = () => {
   expected = undefined;
   actual = undefined;
   result = undefined;
+  randomReturns = [];
 };
 
 //Test 16
@@ -37,9 +38,9 @@ afterEach();
 
 //Test 17
 console.log(`Requirement 7 - Test 17`);
-//* Test that isStormy returns a false values randomly.
+//* Test that isStormy returns a true values randomly.
 console.log(`==================`);
-console.log(`Test that isStormy returns a false values randomly.`);
+console.log(`Test that isStormy returns a true values randomly.`);
 // Arrange
 expected = true;
 actual, result;
@@ -59,4 +60,34 @@ console.log(`==================
 
 `);
 
+//Clean Up
+afterEach();
 //! END OF TEST 17
+
+//Test 18
+console.log(`Requirement 7 - Test 18`);
+//* Test that isStormy returns a false values randomly.
+console.log(`==================`);
+console.log(`Test that isStormy returns a false values randomly.`);
+// Arrange
+expected = false;
+actual, result;
+
+for (let i = 0; i < 10; i++) {
+  randomReturns.push(weather.isStormy());
+}
+// Act
+actual = randomReturns.includes(false); //Call isStormy method
+// Assert
+result = assertEquals(actual, expected); // Check if actual is equal to expected
+
+// Report
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log(`==================
+
+`);
+
+//Clean Up
+afterEach();
+//! END OF TEST 18
