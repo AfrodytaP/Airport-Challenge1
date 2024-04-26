@@ -1,7 +1,5 @@
-//Imports the assertEquals function from test-framework/test-framework.js file
 import { assertEquals } from "./test-framework/test-framework.js";
 import airport from "../src/airport.js"; //Imports the airport module from src/airport.js file
-import { plane1, plane2 } from "../src/plane.js";
 
 //is called after each function to reset the values
 const afterEach = () => {
