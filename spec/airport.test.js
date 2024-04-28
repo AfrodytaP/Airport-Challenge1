@@ -220,10 +220,10 @@ afterEach();
 //! END OF TEST 7
 
 // TEST 8
-//* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
+//* Test that the maximum capacity of the  airport can be overridden with changeAirportCapacityTo().
 console.log(`Requirement 4 -Test 8`);
 console.log(`==================`);
-console.log(`Test that the maximum capacity of airport can be increased.`);
+console.log(`Test that the maximum capacity of the airport can be increased.`);
 // Arrange
 expected = 20;
 actual, result;
@@ -245,10 +245,10 @@ afterEach();
 //! END OF TEST 8
 
 // TEST 9
-//* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
+//* Test that the maximum capacity of the airport can be overridden with changeAirportCapacityTo().
 console.log(`Requirement 4 - Test 9`);
 console.log(`==================`);
-console.log(`Test that the maximum capacity of airport can be set to 0.`);
+console.log(`Test that the maximum capacity of the airport can be set to 0.`);
 // Arrange
 expected = 0;
 actual, result;
@@ -270,11 +270,11 @@ afterEach();
 //! END OF TEST 9
 
 // TEST 10
-//* Test that the maximum capacity of airport can be overridden with changeAirportCapacityTo().
+//* Test that the maximum capacity of the airport can be overridden with changeAirportCapacityTo().
 console.log(`Requirement 4 - Test 10`);
 console.log(`==================`);
 console.log(
-  `Test that the maximum capacity of airport can't be set to negative integer.`
+  `Test that the maximum capacity of the airport can't be set to negative integer.`
 );
 // Arrange
 expected = 10;
@@ -350,10 +350,12 @@ afterEach();
 //! END OF TEST 12
 
 // TEST 13
-//* Test that only planes that are not present can be be added with land().
+//* Test that only planes that are not present can be added with land().
 console.log(`Requirement 6 - Test 13`);
 console.log(`==================`);
-console.log(`Test that checks if a specific plane is in the airport.`);
+console.log(
+  `Test that only planes that are not present can be added with land().`
+);
 // Arrange
 expected = airport.airportPlanes.length + 1;
 actual, result;
@@ -381,7 +383,7 @@ afterEach();
 console.log(`Requirement 6 - Test 14`);
 console.log(`==================`);
 console.log(
-  `Test that checks if a specific plane is in the airport and the airport is not full.`
+  `Test that checks if a specific plane is in the airport when the airport is not full.`
 );
 // Arrange
 expected = 10;
@@ -406,11 +408,11 @@ afterEach();
 //! END OF TEST 14
 
 // TEST 15
-//* Test that checks that plain has an ID before it is added to the airportPlanes array.`
+//* Test that checks that plane has an ID before it is added to the airportPlanes array.`
 console.log(`Requirement 6 - Test 15`);
 console.log(`==================`);
 console.log(
-  `Test that checks that plain has an ID before it is added to the airportPlanes array.`
+  `Test that checks that plane has an ID before it is added to the airportPlanes array.`
 );
 // Arrange
 expected = 0;
